@@ -25,9 +25,10 @@ public class Joueur {
     public void affecterCarte(Carte carte){
         obj_courant=carte;
     }
-    public Carte tirerCarte() {
+    
+    public Carte tirerCarte(Pioche unePioche) {
         
-        return Carte;
+        return unePioche.renvoyerCarte(); // permet de tirer une carte aléatoirement dans la pioche
     }
     
 }
