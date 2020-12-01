@@ -12,15 +12,34 @@ import java.util.Scanner;
  * @author neilb
  */
 public class PartieDeJeu {
-    System.out.println("Combien de joueurs souhaitent jouer à ce méga super beau jeu ? ");
-    Scanner sc;
-        sc = new Scanner(System.in);
-        System.out.println("Saisir nom joueur 1");
-        String nom1 = sc.next();
-    Joueur []=ListeJoueurs[4];
+
     Joueur joueurCourant;
     Grille GrilleDeJeu;
     int NombreJoueurs;
+
+    public PartieDeJeu(NombreJoueurs) {
+        Joueur[] = new ListeJoueurs[NombreJoueurs];
+    }
+
+
+    public void attribuerCouleursAuxPions() {
+        int couleur = rand.nextInt(NombreJoueurs)+1; // tirage aléatoire du nombre de couleurs à répartir
+        
+    }
     
-    
+    public void attribuerPionsAuxJoueurs(){
+        
+    }
+
+    public void distribuerCarte(Pioche unePioche) {
+        joueurCourant.obj_courant = unePioche.renvoyerCarte();
+    }
+
+    public void initialiserPartie() {
+
+    }
+
+    public void debuterPartie() {
+
+    }
 }
