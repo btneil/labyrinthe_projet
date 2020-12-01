@@ -37,5 +37,6 @@ public class Pioche {
             
             nb_melange--;
         }
+        return true;
     }
 }
