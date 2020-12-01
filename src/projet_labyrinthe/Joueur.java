@@ -26,9 +26,9 @@ public class Joueur {
         obj_courant=carte;
     }
     
-    public Carte tirerCarte(Pioche unePioche) {
-        
-        return unePioche.renvoyerCarte(); // permet de tirer une carte aléatoirement dans la pioche
+    public void tirerCarte(Pioche unePioche) {
+        obj_courant=unePioche.renvoyerCarte();
+        // permet de tirer une carte aléatoirement dans la pioche
     }
     
 }
