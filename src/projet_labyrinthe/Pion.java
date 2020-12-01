@@ -15,4 +15,7 @@ public class Pion {
     public Pion(String couleur){
         Couleur=couleur;
     }
+    public String lireCouleur(){
+        return Couleur;
+    }
 }
