@@ -12,7 +12,7 @@ package projet_labyrinthe;
 public class Carte {
     String Tresor; 
     
-    public Carte(){
-        Tresor="";
+    public Carte(String num_tresor){
+        Tresor=num_tresor;
     }
 }
