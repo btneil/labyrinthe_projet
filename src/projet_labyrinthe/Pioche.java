@@ -30,7 +30,10 @@ public class Pioche {
                 carte_2 = (int) (Math.random()*25 - 0.00001);
             }
             Carte carte_1_echange = ListeCartes[carte_1];
-            Carte carte_2_echange = ListeCartes[carte_2];
+            Carte carte_2_echange = ListeCartes[carte_2]; //on récupère les 2 cartes à echanger
+            
+            ListeCartes[carte_1] = carte_2_echange;
+            ListeCartes[carte_2] = carte_1_echange;//on les échanges
             
             nb_melange--;
         }
