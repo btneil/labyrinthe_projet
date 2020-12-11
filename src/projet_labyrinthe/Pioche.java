@@ -39,4 +39,13 @@ public class Pioche {
         }
         return true;
     }
+    public Carte renvoyerCarte(){
+        if (nbr_cartes>=1){
+            nbr_cartes=nbr_cartes-1;
+            return ListeCartes[nbr_cartes];
+        }
+        else{
+            return null;
+        }
+    }
 }

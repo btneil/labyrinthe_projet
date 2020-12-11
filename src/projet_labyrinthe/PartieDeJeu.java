@@ -6,24 +6,28 @@
 package projet_labyrinthe;
 
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
  * @author neilb
  */
 public class PartieDeJeu {
+    Random rand = new Random();
 
     Joueur joueurCourant;
     Grille GrilleDeJeu;
     int NombreJoueurs;
+    Joueur[] ListeJoueurs = new Joueur[NombreJoueurs];
 
-    public PartieDeJeu(NombreJoueurs) {
-        Joueur[] = new ListeJoueurs[NombreJoueurs];
+    public PartieDeJeu(int nb_joueurs) {
+        NombreJoueurs=nb_joueurs;
     }
 
 
     public void attribuerCouleursAuxPions() {
         int couleur = rand.nextInt(NombreJoueurs)+1; // tirage aléatoire du nombre de couleurs à répartir
+        
         
     }
     
