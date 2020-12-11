@@ -16,12 +16,13 @@ public class GrilleJeu {
 
     public GrilleJeu(){
         cellSupp=null;
-        cellJeu=null;
-}
-    public boolean deplacerPion(Cellule depart,Cellule arrivee){
-        depart.pionCourant=null;
-        
     }
+    public boolean deplacerPion(Cellule depart,Cellule arrivee){
+        arrivee.pionCourant=depart.pionCourant;
+        depart.pionCourant=null;
+        return true;
+    }
+    
     public boolean placerCellule_ligneD(int l){
         Cellule cellJeu = plateau[l][6];
         plateau[l][6]=null;
@@ -63,7 +64,7 @@ public class GrilleJeu {
         
     }
     public boolean presenceTresor(int i, int j){
-        if (plateau[i][j].tresorCourant!=""){
+        if (plateau[i][j].tresorCourant!=0){
             return true;
         }
         else{
@@ -72,17 +73,34 @@ public class GrilleJeu {
             
     }
     public void remplirGrille(){
-        for (int i=0; i<7;i++){
-            for(int j=0;j<7;j++){
-                plateau[i][j]=new Cellule();
-            }
+        
+        //création aléatoire des 24 trésors
+        String[] TableauTrésor = new String[] {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"};
+        int i=0;
+        while (i<24){
+            int col=(int) (Math.random()*25 - 0.00001);
+            int lig=(int) (Math.random()*25 - 0.00001);
+            if (plateau[lig][col].tresorCourant==0 && ((lig!=0 && col!=0) || (lig!=0 && col!=6) || (lig!=6 && col!=0) || (lig!=6 && col!=6))){
+                plateau[lig][col].tresorCourant=i;
+                i++;
+            }  
         }
         
-    }
-    public boolean recupererCellule(){
+       //répartion des 4 agles en "L"
+       plateau[0][0].d_droite=true;
+       plateau[0][0].d_bas=true;
+       
+       plateau[0][6].d_gauche=true;
+       plateau[0][6].d_bas=true;
+       
+       plateau[6][6].d_gauche=true;
+       plateau[6][6].d_haut=true;
+       
+       plateau[6][0].d_haut=true;
+       plateau[6][0].d_droite=true;
         
-        return false;
     }
-
-
+   // public boolean recupererCellule(){   
+       // return false;
+  //  }
 }
