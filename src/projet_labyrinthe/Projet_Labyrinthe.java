@@ -17,6 +17,7 @@ public class Projet_Labyrinthe {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        // Ceci est un test // wsh 
         // Ceci est un test J'ai une grosse bite// 
     }
     
