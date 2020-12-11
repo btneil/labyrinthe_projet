@@ -16,7 +16,7 @@ public class PartieDeJeu {
     Random rand = new Random();
 
     Joueur joueurCourant;
-    Grille GrilleDeJeu;
+    GrilleJeu GrilleDeJeu;
     int NombreJoueurs;
     Joueur[] ListeJoueurs = new Joueur[NombreJoueurs];
 
@@ -26,13 +26,10 @@ public class PartieDeJeu {
 
 
     public void attribuerCouleursAuxPions() {
-        int couleur = rand.nextInt(NombreJoueurs)+1; // tirage aléatoire du nombre de couleurs à répartir
-        
-        
-    }
-    
-    public void attribuerPionsAuxJoueurs(){
-        
+        String couleur[] = new String[]{"R","V","B","O"};
+        for ( int i=0;i<NombreJoueurs;i++){
+            ListeJoueurs[i].pion.Couleur=couleur[i];
+        }
     }
 
     public void distribuerCarte(Pioche unePioche) {
