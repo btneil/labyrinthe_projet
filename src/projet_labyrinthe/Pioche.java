@@ -16,7 +16,7 @@ public class Pioche {
     public Pioche(){
         nbr_cartes = 24;
         for(int i =0;i<24;i++){
-            ListeCartes[i]=new Carte( String.valueOf(i));
+            ListeCartes[i]=new Carte(i);
         }
     }
     

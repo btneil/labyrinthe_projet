@@ -10,9 +10,9 @@ package projet_labyrinthe;
  * @author Quentin
  */
 public class Carte {
-    String Tresor; 
+    int Tresor; 
     
-    public Carte(String num_tresor){
+    public Carte(int num_tresor){
         Tresor=num_tresor;
     }
 }

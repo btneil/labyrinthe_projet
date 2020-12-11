@@ -13,10 +13,11 @@ package projet_labyrinthe;
 public class Cellule {
     Pion pionCourant;
     boolean d_haut,d_bas,d_droite,d_gauche ;
-    String tresorCourant;
+    int tresorCourant;
     
     public Cellule(){
         pionCourant=null;
+        tresorCourant=0;
         d_haut=false;
         d_bas=false;
         d_droite=false;
@@ -24,7 +25,7 @@ public class Cellule {
     }
 
     public boolean presenceTresor(){
-        if(tresorCourant!=null){
+        if(tresorCourant!=0){
             return true;
         }
         else{
