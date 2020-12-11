@@ -10,8 +10,8 @@ package projet_labyrinthe;
  * @author maldo
  */
 public class GrilleJeu {
-    Cellulle [][] plateau = new Cellulle[7][7];
-    Cellulle cellSupp;
+    Cellule [][] plateau = new Cellule[7][7];
+    Cellule cellSupp;
 
 
     public GrilleJeu(){
