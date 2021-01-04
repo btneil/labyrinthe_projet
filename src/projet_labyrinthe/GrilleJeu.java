@@ -117,4 +117,40 @@ public class GrilleJeu {
    // public boolean recupererCellule(){   
        // return false;
   //  }
+    
+    boolean deplacement_h(int i,int j,int m,int n){
+        if(plateau[i][j].d_haut==true && plateau[m][n].d_bas==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+     
+    boolean deplacement_b(int i,int j,int m,int n){
+        if(plateau[i][j].d_bas==true && plateau[m][n].d_haut==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    boolean deplacement_g(int i,int j,int m,int n){
+        if(plateau[i][j].d_gauche==true && plateau[m][n].d_droite==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    boolean deplacement_d(int i,int j,int m,int n){
+        if(plateau[i][j].d_droite==true && plateau[m][n].d_gauche==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
