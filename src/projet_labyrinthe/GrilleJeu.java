@@ -18,19 +18,19 @@ public class GrilleJeu {
         cellSupp=null;
     }
     public boolean deplacerPion(int i,int j, int m, int n){
-        if (deplacement_h==true && i==m+1){
+        if (deplacement_h(i,j,m,n)==true && i==m+1){
             plateau[m][n].pionCourant=plateau[i][j].pionCourant;
             plateau[i][j].pionCourant=null;
         }
-        if(deplacement_b==true && i==m-1){
+        if(deplacement_b(i,j,m,n)==true && i==m-1){
             plateau[m][n].pionCourant=plateau[i][j].pionCourant;
             plateau[i][j].pionCourant=null;
         }
-        if(deplacement_g==true && j==n+1){
+        if(deplacement_g(i,j,m,n)==true && j==n+1){
             plateau[m][n].pionCourant=plateau[i][j].pionCourant;
             plateau[i][j].pionCourant=null;
         }
-        if(deplacement_d==true && j==n-1){
+        if(deplacement_d(i,j,m,n)==true && j==n-1){
             plateau[m][n].pionCourant=plateau[i][j].pionCourant;
             plateau[i][j].pionCourant=null;
         }
