@@ -8,7 +8,7 @@ package projet_labyrinthe;
 
 /**
  *
- * @author Owner
+ * @author LaDric
  */
 public class Cellule {
     Pion pionCourant;

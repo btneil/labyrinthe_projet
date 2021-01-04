@@ -17,9 +17,23 @@ public class GrilleJeu {
     public GrilleJeu(){
         cellSupp=null;
     }
-    public boolean deplacerPion(Cellule depart,Cellule arrivee){
-        arrivee.pionCourant=depart.pionCourant;
-        depart.pionCourant=null;
+    public boolean deplacerPion(int i,int j, int m, int n){
+        if (deplacement_h(i,j,m,n)==true && i==m+1){
+            plateau[m][n].pionCourant=plateau[i][j].pionCourant;
+            plateau[i][j].pionCourant=null;
+        }
+        if(deplacement_b(i,j,m,n)==true && i==m-1){
+            plateau[m][n].pionCourant=plateau[i][j].pionCourant;
+            plateau[i][j].pionCourant=null;
+        }
+        if(deplacement_g(i,j,m,n)==true && j==n+1){
+            plateau[m][n].pionCourant=plateau[i][j].pionCourant;
+            plateau[i][j].pionCourant=null;
+        }
+        if(deplacement_d(i,j,m,n)==true && j==n-1){
+            plateau[m][n].pionCourant=plateau[i][j].pionCourant;
+            plateau[i][j].pionCourant=null;
+        }
         return true;
     }
     
@@ -103,4 +117,40 @@ public class GrilleJeu {
    // public boolean recupererCellule(){   
        // return false;
   //  }
+    
+    boolean deplacement_h(int i,int j,int m,int n){
+        if(plateau[i][j].d_haut==true && plateau[m][n].d_bas==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+     
+    boolean deplacement_b(int i,int j,int m,int n){
+        if(plateau[i][j].d_bas==true && plateau[m][n].d_haut==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    boolean deplacement_g(int i,int j,int m,int n){
+        if(plateau[i][j].d_gauche==true && plateau[m][n].d_droite==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    boolean deplacement_d(int i,int j,int m,int n){
+        if(plateau[i][j].d_droite==true && plateau[m][n].d_gauche==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
