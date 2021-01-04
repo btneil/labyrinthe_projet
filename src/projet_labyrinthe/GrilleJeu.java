@@ -17,9 +17,9 @@ public class GrilleJeu {
     public GrilleJeu(){
         cellSupp=null;
     }
-    public boolean deplacerPion(Cellule depart,Cellule arrivee){
-        arrivee.pionCourant=depart.pionCourant;
-        depart.pionCourant=null;
+    public boolean deplacerPion(int i,int j, int m, int n){
+        plateau[m][n].pionCourant=plateau[i][j].pionCourant;
+        plateau[i][j].pionCourant=null;
         return true;
     }
     
