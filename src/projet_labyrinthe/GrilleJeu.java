@@ -138,6 +138,7 @@ public class GrilleJeu {
        plateau[6][4].image="/images/livre.png";
        plateau[6][4].tresorCourant=12;
        
+       
        //création aléatoire des 12 autres trésors
         int i=13;
         while (i<25){
@@ -219,6 +220,28 @@ public class GrilleJeu {
                 }
             }
         }
+        int compteur_I = 13;
+        int compteur_L=8; //penser à creer carte supp en L
+        for (i=0;i<7;i++){
+            for (int j=0;j<7;j++){
+                if(plateau[i][j].tresorCourant==0 && ((i!=0 && j!=0) && (i!=0 && j!=6) && (i!=6 && j!=0) && (i!=6 && j!=6))){
+                    int choix=(int) (Math.random()*2 - 0.00001);
+                    if (choix==0 && compteur_I>0){
+                        plateau[i][j].image="/images/tuile1.png";
+                        plateau[i][j].d_haut=true;
+                        plateau[i][j].d_bas=true;
+                        
+                        compteur_I--;
+                    }
+                    if(choix==1 && compteur_L>0){
+                        plateau[i][j].image="/images/tuile2.png";
+                        plateau[i][j].d_droite=true;
+                        plateau[i][j].d_bas=true;                        
+                        compteur_L--;
+                    }
+            }
+        }
+            }
 
         
     }
