@@ -87,31 +87,111 @@ public class GrilleJeu {
             
     }
     public void remplirGrille(){
+        for (int i=0;i<7;i++){
+            for (int j=0;j<7;j++){
+                plateau[i][j]=new Cellule();
+            }
+        }
         
-        //création aléatoire des 24 trésors
-        String[] TableauTrésor = new String[] {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"};
-        int i=0;
-        while (i<24){
-            int col=(int) (Math.random()*25 - 0.00001);
-            int lig=(int) (Math.random()*25 - 0.00001);
-            if (plateau[lig][col].tresorCourant==0 && ((lig!=0 && col!=0) || (lig!=0 && col!=6) || (lig!=6 && col!=0) || (lig!=6 && col!=6))){
+        
+       //répartion des 4 agles en "L"
+       plateau[0][0].d_droite=true;
+       plateau[0][0].d_bas=true;
+       plateau[0][0].image="/images/departB.png";
+       
+       plateau[0][6].d_gauche=true;
+       plateau[0][6].d_bas=true;
+       plateau[0][6].image="/images/departV.png";
+       
+       plateau[6][6].d_gauche=true;
+       plateau[6][6].d_haut=true;
+       plateau[6][6].image="/images/departR.png";
+       
+       plateau[6][0].d_haut=true;
+       plateau[6][0].d_droite=true;
+       plateau[6][0].image="/images/departJ.png";
+       
+       //initialisation carte qui bougent pas
+       
+       plateau[0][2].image="/images/heaume.png";
+       plateau[0][2].tresorCourant=1;
+       plateau[0][4].image="/images/chandelier.png";
+       plateau[0][4].tresorCourant=2;
+       plateau[2][0].image="/images/epee.png";
+       plateau[2][0].tresorCourant=3;
+       plateau[2][2].image="/images/saphir.png";
+       plateau[2][2].tresorCourant=4;
+       plateau[2][4].image="/images/tresor.png";
+       plateau[2][4].tresorCourant=5;
+       plateau[2][6].image="/images/bague.png";
+       plateau[2][6].tresorCourant=6;
+       plateau[4][0].image="/images/crane.png";
+       plateau[4][0].tresorCourant=7;
+       plateau[4][2].image="/images/cle.png";
+       plateau[4][2].tresorCourant=8;
+       plateau[4][4].image="/images/couronne.png";
+       plateau[4][4].tresorCourant=9;
+       plateau[4][6].image="/images/carteTresor.png";
+       plateau[4][6].tresorCourant=10;
+       plateau[6][2].image="/images/bourse.png";
+       plateau[6][2].tresorCourant=11;
+       plateau[6][4].image="/images/livre.png";
+       plateau[6][4].tresorCourant=12;
+       
+       //création aléatoire des 12 autres trésors
+        int i=13;
+        while (i<25){
+            int col=(int) (Math.random()*7 - 0.00001);
+            int lig=(int) (Math.random()*7 - 0.00001);
+            if (plateau[lig][col].tresorCourant==0 && ((lig!=0 && col!=0) && (lig!=0 && col!=6) && (lig!=6 && col!=0) && (lig!=6 && col!=6))){
                 plateau[lig][col].tresorCourant=i;
                 i++;
             }  
         }
         
-       //répartion des 4 agles en "L"
-       plateau[0][0].d_droite=true;
-       plateau[0][0].d_bas=true;
-       
-       plateau[0][6].d_gauche=true;
-       plateau[0][6].d_bas=true;
-       
-       plateau[6][6].d_gauche=true;
-       plateau[6][6].d_haut=true;
-       
-       plateau[6][0].d_haut=true;
-       plateau[6][0].d_droite=true;
+        for (i=0;i<7;i++){
+            for (int j=0;j<7;j++){
+                if(plateau[i][j].tresorCourant==13){
+                    plateau[i][j].image="/images/araignee.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                }
+                if(plateau[i][j].tresorCourant==14){
+                    plateau[i][j].image="/images/scarabee.png";
+                }
+                if(plateau[i][j].tresorCourant==15){
+                    plateau[i][j].image="/images/chauvesouris.png";
+                }
+                if(plateau[i][j].tresorCourant==16){
+                    plateau[i][j].image="/images/rat.png";
+                }
+                if(plateau[i][j].tresorCourant==17){
+                    plateau[i][j].image="/images/chouette.png";
+                }
+                if(plateau[i][j].tresorCourant==18){
+                    plateau[i][j].image="/images/dragon.png";
+                }
+                if(plateau[i][j].tresorCourant==19){
+                    plateau[i][j].image="/images/fantome.png";
+                }
+                if(plateau[i][j].tresorCourant==20){
+                    plateau[i][j].image="/images/fee.png";
+                }
+                if(plateau[i][j].tresorCourant==21){
+                    plateau[i][j].image="/images/genie.png";
+                }
+                if(plateau[i][j].tresorCourant==22){
+                    plateau[i][j].image="/images/gobelin.png";
+                }
+                if(plateau[i][j].tresorCourant==23){
+                    plateau[i][j].image="/images/lezard.png";
+                }
+                if(plateau[i][j].tresorCourant==24){
+                    plateau[i][j].image="/images/papillon.png";
+                }
+            }
+        }
+
         
     }
    // public boolean recupererCellule(){   

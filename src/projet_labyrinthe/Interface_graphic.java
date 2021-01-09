@@ -21,9 +21,11 @@ public class Interface_graphic extends javax.swing.JFrame {
         Info_partie.setVisible(false);
         Carte_en_trop.setVisible(false);
         
+        grilleDeJeu.remplirGrille();
+        
         for (int i=0;i<7;i++){
             for (int j=0;j<7;j++){
-                Case_graphique Kazeu = new Case_graphique(grilleDeJeu.plateau[i][j],"/images/tuile1.png");
+                Case_graphique Kazeu = new Case_graphique(grilleDeJeu.plateau[i][j],grilleDeJeu.plateau[i][j].image);
                 Grille_de_jeu.add(Kazeu);
             }
         }
@@ -86,7 +88,6 @@ public class Interface_graphic extends javax.swing.JFrame {
         Panneau_début_partie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
 
         Bouton_ajouter_J.setText("Ajouter un joueur");
-        Bouton_ajouter_J.setActionCommand("Ajouter un joueur");
         Bouton_ajouter_J.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_ajouter_JActionPerformed(evt);
@@ -158,12 +159,16 @@ public class Interface_graphic extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        Table_de_jeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         Grille_de_jeu.setBackground(new java.awt.Color(255, 0, 153));
-        Grille_de_jeu.setLayout(new java.awt.GridLayout(7, 7));
+        Grille_de_jeu.setLayout(new java.awt.GridLayout(8, 7));
+        Table_de_jeu.add(Grille_de_jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 76, 896, 896));
 
         jButton50.setText("jButton50");
         jButton50.setMaximumSize(new java.awt.Dimension(23, 23));
         jButton50.setMinimumSize(new java.awt.Dimension(23, 23));
+        Table_de_jeu.add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 989, 24, -1));
 
         jToggleButton4.setText("jToggleButton4");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +176,7 @@ public class Interface_graphic extends javax.swing.JFrame {
                 jToggleButton4ActionPerformed(evt);
             }
         });
+        Table_de_jeu.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 989, 24, -1));
 
         jToggleButton5.setText("jToggleButton5");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -178,103 +184,34 @@ public class Interface_graphic extends javax.swing.JFrame {
                 jToggleButton5ActionPerformed(evt);
             }
         });
+        Table_de_jeu.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 24, 24, -1));
 
         jToggleButton6.setText("jToggleButton6");
+        Table_de_jeu.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 141, 24, -1));
 
         jToggleButton7.setText("jToggleButton7");
+        Table_de_jeu.add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 234, 24, -1));
 
         jToggleButton8.setText("jToggleButton8");
+        Table_de_jeu.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 917, 24, -1));
 
         jToggleButton9.setText("jToggleButton9");
+        Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 139, 24, -1));
 
         jToggleButton10.setText("jToggleButton10");
+        Table_de_jeu.add(jToggleButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 233, 24, -1));
 
         jToggleButton11.setText("jToggleButton11");
+        Table_de_jeu.add(jToggleButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 918, 24, -1));
 
         jToggleButton14.setText("jToggleButton14");
+        Table_de_jeu.add(jToggleButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 978, 24, -1));
 
         jToggleButton13.setText("jToggleButton13");
+        Table_de_jeu.add(jToggleButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 978, 24, -1));
 
         jToggleButton12.setText("jToggleButton12");
-
-        javax.swing.GroupLayout Table_de_jeuLayout = new javax.swing.GroupLayout(Table_de_jeu);
-        Table_de_jeu.setLayout(Table_de_jeuLayout);
-        Table_de_jeuLayout.setHorizontalGroup(
-            Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Table_de_jeuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
-                .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
-            .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                                .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Table_de_jeuLayout.createSequentialGroup()
-                                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(14, 14, 14)))
-                        .addComponent(Grille_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115)
-                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                        .addGap(253, 253, 253)
-                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        Table_de_jeuLayout.setVerticalGroup(
-            Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jToggleButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jToggleButton6)
-                        .addGap(70, 70, 70)
-                        .addComponent(jToggleButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton8)
-                        .addGap(72, 72, 72))
-                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                        .addComponent(Grille_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jToggleButton14)
-                            .addComponent(jToggleButton13)
-                            .addComponent(jToggleButton12))
-                        .addContainerGap())
-                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jToggleButton9)
-                        .addGap(71, 71, 71)
-                        .addComponent(jToggleButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton11)
-                        .addGap(71, 71, 71))))
-            .addGroup(Table_de_jeuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton4)
-                    .addComponent(jButton50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        Table_de_jeu.add(jToggleButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 978, 24, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -292,7 +229,7 @@ public class Interface_graphic extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 328, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

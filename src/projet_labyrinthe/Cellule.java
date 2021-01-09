@@ -14,6 +14,7 @@ public class Cellule {
     Pion pionCourant;
     boolean d_haut,d_bas,d_droite,d_gauche ;
     int tresorCourant;
+    String image;
     
     public Cellule(){
         pionCourant=null;
@@ -22,6 +23,7 @@ public class Cellule {
         d_bas=false;
         d_droite=false;
         d_gauche=false;
+        image="/images/tuile1.png";
     }
 
     public boolean presenceTresor(){

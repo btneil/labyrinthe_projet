@@ -19,7 +19,7 @@ public class Case_graphique extends JButton{
     
     public Case_graphique(Cellule uneCarte,String nom_image){
         carte_associe = uneCarte;
-        Tuile = new javax.swing.ImageIcon(getClass().getResource("nom_image"));
+        Tuile = new javax.swing.ImageIcon(getClass().getResource(nom_image));
     }
     
     @Override
