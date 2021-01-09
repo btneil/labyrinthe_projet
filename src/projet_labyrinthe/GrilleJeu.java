@@ -158,36 +158,64 @@ public class GrilleJeu {
                 }
                 if(plateau[i][j].tresorCourant==14){
                     plateau[i][j].image="/images/scarabee.png";
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==15){
                     plateau[i][j].image="/images/chauvesouris.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==16){
                     plateau[i][j].image="/images/rat.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_bas=true;
                 }
                 if(plateau[i][j].tresorCourant==17){
                     plateau[i][j].image="/images/chouette.png";
+                    plateau[i][j].d_droite=true;
+                    plateau[i][j].d_bas=true;
                 }
                 if(plateau[i][j].tresorCourant==18){
                     plateau[i][j].image="/images/dragon.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==19){
                     plateau[i][j].image="/images/fantome.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==20){
                     plateau[i][j].image="/images/fee.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==21){
                     plateau[i][j].image="/images/genie.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==22){
                     plateau[i][j].image="/images/gobelin.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
+                    plateau[i][j].d_droite=true;
                 }
                 if(plateau[i][j].tresorCourant==23){
                     plateau[i][j].image="/images/lezard.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
                 }
                 if(plateau[i][j].tresorCourant==24){
                     plateau[i][j].image="/images/papillon.png";
+                    plateau[i][j].d_gauche=true;
+                    plateau[i][j].d_haut=true;
                 }
             }
         }
