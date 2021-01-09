@@ -10,12 +10,23 @@ package projet_labyrinthe;
  * @author maldo
  */
 public class Interface_graphic extends javax.swing.JFrame {
+    GrilleJeu grilleDeJeu = new GrilleJeu();
 
     /**
      * Creates new form Interface_graphic
      */
     public Interface_graphic() {
         initComponents();
+        panneau_Info_joueur_courant.setVisible(false);
+        Info_partie.setVisible(false);
+        Carte_en_trop.setVisible(false);
+        
+        for (int i=0;i<7;i++){
+            for (int j=0;j<7;j++){
+                Case_graphique Kazeu = new Case_graphique(grilleDeJeu.plateau[i][j]);
+                Grille_de_jeu.add(Kazeu);
+            }
+        }
     }
 
     /**
@@ -32,70 +43,20 @@ public class Interface_graphic extends javax.swing.JFrame {
         Panneau_début_partie = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        Bouton_ajouter_J = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        Bouton_débuter_partie = new javax.swing.JToggleButton();
+        Pseudo_J4 = new javax.swing.JTextField();
+        Pseudo_J1 = new javax.swing.JTextField();
+        Pseudo_J2 = new javax.swing.JTextField();
+        Pseudo_J3 = new javax.swing.JTextField();
         panneau_Info_joueur_courant = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        Carte_en_trop = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         Info_partie = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        Table_de_jeu = new javax.swing.JPanel();
         Grille_de_jeu = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton43 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
-        jButton48 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
-        jButton46 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
         jButton50 = new javax.swing.JButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
@@ -105,9 +66,9 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton9 = new javax.swing.JToggleButton();
         jToggleButton10 = new javax.swing.JToggleButton();
         jToggleButton11 = new javax.swing.JToggleButton();
-        jToggleButton12 = new javax.swing.JToggleButton();
-        jToggleButton13 = new javax.swing.JToggleButton();
         jToggleButton14 = new javax.swing.JToggleButton();
+        jToggleButton13 = new javax.swing.JToggleButton();
+        jToggleButton12 = new javax.swing.JToggleButton();
 
         jLabel3.setText("jLabel3");
 
@@ -124,14 +85,14 @@ public class Interface_graphic extends javax.swing.JFrame {
         jLabel2.setText("Nom Joueur 2:");
         Panneau_début_partie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
 
-        jToggleButton1.setText("Ajouter un joueur");
-        jToggleButton1.setActionCommand("Ajouter un joueur");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        Bouton_ajouter_J.setText("Ajouter un joueur");
+        Bouton_ajouter_J.setActionCommand("Ajouter un joueur");
+        Bouton_ajouter_J.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                Bouton_ajouter_JActionPerformed(evt);
             }
         });
-        Panneau_début_partie.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, -1));
+        Panneau_début_partie.add(Bouton_ajouter_J, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, -1));
 
         jLabel4.setText("Nom Joueur 3:");
         Panneau_début_partie.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
@@ -139,31 +100,31 @@ public class Interface_graphic extends javax.swing.JFrame {
         jLabel5.setText("Nom Joueur 4:");
         Panneau_début_partie.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
-        jToggleButton2.setText("Débuter Partie");
-        jToggleButton2.setToolTipText("");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        Bouton_débuter_partie.setText("Débuter Partie");
+        Bouton_débuter_partie.setToolTipText("");
+        Bouton_débuter_partie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                Bouton_débuter_partieActionPerformed(evt);
             }
         });
-        Panneau_début_partie.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, -1, -1));
+        Panneau_début_partie.add(Bouton_débuter_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, -1, -1));
 
-        jTextField1.setText("Pseudo");
-        Panneau_début_partie.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 150, -1));
+        Pseudo_J4.setText("Pseudo");
+        Panneau_début_partie.add(Pseudo_J4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 150, -1));
 
-        jTextField2.setText("Pseudo");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Pseudo_J1.setText("Pseudo");
+        Pseudo_J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                Pseudo_J1ActionPerformed(evt);
             }
         });
-        Panneau_début_partie.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 150, -1));
+        Panneau_début_partie.add(Pseudo_J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 150, -1));
 
-        jTextField3.setText("Pseudo");
-        Panneau_début_partie.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 150, -1));
+        Pseudo_J2.setText("Pseudo");
+        Panneau_début_partie.add(Pseudo_J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 150, -1));
 
-        jTextField4.setText("Pseudo");
-        Panneau_début_partie.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, -1));
+        Pseudo_J3.setText("Pseudo");
+        Panneau_début_partie.add(Pseudo_J3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, -1));
 
         panneau_Info_joueur_courant.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -171,18 +132,18 @@ public class Interface_graphic extends javax.swing.JFrame {
         panneau_Info_joueur_courant.setLayout(panneau_Info_joueur_courantLayout);
         panneau_Info_joueur_courantLayout.setHorizontalGroup(
             panneau_Info_joueur_courantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 331, Short.MAX_VALUE)
         );
         panneau_Info_joueur_courantLayout.setVerticalGroup(
             panneau_Info_joueur_courantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 213, Short.MAX_VALUE)
         );
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Carte_en_trop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setBackground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("carte en trop");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
+        Carte_en_trop.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
 
         Info_partie.setBackground(new java.awt.Color(102, 0, 204));
 
@@ -190,178 +151,15 @@ public class Interface_graphic extends javax.swing.JFrame {
         Info_partie.setLayout(Info_partieLayout);
         Info_partieLayout.setHorizontalGroup(
             Info_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         Info_partieLayout.setVerticalGroup(
             Info_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
         Grille_de_jeu.setBackground(new java.awt.Color(255, 0, 153));
         Grille_de_jeu.setLayout(new java.awt.GridLayout(7, 7));
-
-        jButton1.setText("jButton1");
-        Grille_de_jeu.add(jButton1);
-
-        jButton8.setText("jButton8");
-        Grille_de_jeu.add(jButton8);
-
-        jButton9.setText("jButton9");
-        Grille_de_jeu.add(jButton9);
-
-        jButton2.setText("jButton2");
-        Grille_de_jeu.add(jButton2);
-
-        jButton3.setText("jButton3");
-        Grille_de_jeu.add(jButton3);
-
-        jButton15.setText("jButton15");
-        Grille_de_jeu.add(jButton15);
-
-        jButton4.setText("jButton4");
-        Grille_de_jeu.add(jButton4);
-
-        jButton5.setText("jButton5");
-        Grille_de_jeu.add(jButton5);
-
-        jButton11.setText("jButton11");
-        Grille_de_jeu.add(jButton11);
-
-        jButton6.setText("jButton6");
-        Grille_de_jeu.add(jButton6);
-
-        jButton10.setText("jButton10");
-        Grille_de_jeu.add(jButton10);
-
-        jButton12.setText("jButton12");
-        Grille_de_jeu.add(jButton12);
-
-        jButton13.setText("jButton13");
-        Grille_de_jeu.add(jButton13);
-
-        jButton7.setText("jButton7");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        Grille_de_jeu.add(jButton7);
-
-        jButton14.setText("jButton14");
-        Grille_de_jeu.add(jButton14);
-
-        jButton16.setText("jButton16");
-        Grille_de_jeu.add(jButton16);
-
-        jButton37.setText("jButton37");
-        Grille_de_jeu.add(jButton37);
-
-        jButton43.setText("jButton43");
-        Grille_de_jeu.add(jButton43);
-
-        jButton41.setText("jButton41");
-        Grille_de_jeu.add(jButton41);
-
-        jButton44.setText("jButton44");
-        Grille_de_jeu.add(jButton44);
-
-        jButton48.setText("jButton48");
-        Grille_de_jeu.add(jButton48);
-
-        jButton17.setText("jButton17");
-        Grille_de_jeu.add(jButton17);
-
-        jButton22.setText("jButton22");
-        Grille_de_jeu.add(jButton22);
-
-        jButton18.setText("jButton18");
-        Grille_de_jeu.add(jButton18);
-
-        jButton19.setText("jButton19");
-        Grille_de_jeu.add(jButton19);
-
-        jButton42.setText("jButton42");
-        Grille_de_jeu.add(jButton42);
-
-        jButton45.setText("jButton45");
-        Grille_de_jeu.add(jButton45);
-
-        jButton47.setText("jButton47");
-        Grille_de_jeu.add(jButton47);
-
-        jButton46.setText("jButton46");
-        Grille_de_jeu.add(jButton46);
-
-        jButton20.setText("jButton20");
-        Grille_de_jeu.add(jButton20);
-
-        jButton38.setText("jButton38");
-        Grille_de_jeu.add(jButton38);
-
-        jButton40.setText("jButton40");
-        Grille_de_jeu.add(jButton40);
-
-        jButton39.setText("jButton39");
-        Grille_de_jeu.add(jButton39);
-
-        jButton49.setText("jButton49");
-        Grille_de_jeu.add(jButton49);
-
-        jButton21.setText("jButton21");
-        Grille_de_jeu.add(jButton21);
-
-        jButton29.setText("jButton29");
-        Grille_de_jeu.add(jButton29);
-
-        jButton23.setText("jButton23");
-        Grille_de_jeu.add(jButton23);
-
-        jButton24.setText("jButton24");
-        Grille_de_jeu.add(jButton24);
-
-        jButton25.setText("jButton25");
-        Grille_de_jeu.add(jButton25);
-
-        jButton26.setText("jButton26");
-        Grille_de_jeu.add(jButton26);
-
-        jButton27.setText("jButton27");
-        Grille_de_jeu.add(jButton27);
-
-        jButton28.setText("jButton28");
-        Grille_de_jeu.add(jButton28);
-
-        jButton36.setText("jButton36");
-        Grille_de_jeu.add(jButton36);
-
-        jButton30.setText("jButton30");
-        Grille_de_jeu.add(jButton30);
-
-        jButton31.setText("jButton31");
-        Grille_de_jeu.add(jButton31);
-
-        jButton32.setText("jButton32");
-        Grille_de_jeu.add(jButton32);
-
-        jButton33.setText("jButton33");
-        Grille_de_jeu.add(jButton33);
-
-        jButton34.setText("jButton34");
-        Grille_de_jeu.add(jButton34);
-
-        jButton35.setText("jButton35");
-        Grille_de_jeu.add(jButton35);
 
         jButton50.setText("jButton50");
         jButton50.setMaximumSize(new java.awt.Dimension(23, 23));
@@ -393,155 +191,149 @@ public class Interface_graphic extends javax.swing.JFrame {
 
         jToggleButton11.setText("jToggleButton11");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+        jToggleButton14.setText("jToggleButton14");
+
+        jToggleButton13.setText("jToggleButton13");
+
+        jToggleButton12.setText("jToggleButton12");
+
+        javax.swing.GroupLayout Table_de_jeuLayout = new javax.swing.GroupLayout(Table_de_jeu);
+        Table_de_jeu.setLayout(Table_de_jeuLayout);
+        Table_de_jeuLayout.setHorizontalGroup(
+            Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Table_de_jeuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
+            .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Table_de_jeuLayout.createSequentialGroup()
                                 .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Table_de_jeuLayout.createSequentialGroup()
+                                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(14, 14, 14)))
-                        .addComponent(Grille_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Grille_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
+                        .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(115, 115, 115)
+                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                        .addGap(253, 253, 253)
                         .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jToggleButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jToggleButton4)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
+        Table_de_jeuLayout.setVerticalGroup(
+            Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jToggleButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
                         .addComponent(jToggleButton6)
                         .addGap(70, 70, 70)
                         .addComponent(jToggleButton7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jToggleButton8)
                         .addGap(72, 72, 72))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                        .addComponent(Grille_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Grille_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jToggleButton14)
+                            .addComponent(jToggleButton13)
+                            .addComponent(jToggleButton12))
                         .addContainerGap())
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
+                    .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
                         .addComponent(jToggleButton9)
                         .addGap(71, 71, 71)
                         .addComponent(jToggleButton10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jToggleButton11)
                         .addGap(71, 71, 71))))
+            .addGroup(Table_de_jeuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Table_de_jeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton4)
+                    .addComponent(jButton50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-
-        jToggleButton12.setText("jToggleButton12");
-
-        jToggleButton13.setText("jToggleButton13");
-
-        jToggleButton14.setText("jToggleButton14");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Info_partie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jToggleButton12)
-                                .addComponent(jToggleButton13)
-                                .addComponent(jToggleButton14)))))
-                .addContainerGap(265, Short.MAX_VALUE))
+                    .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void Bouton_ajouter_JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ajouter_JActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_Bouton_ajouter_JActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void Bouton_débuter_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_débuter_partieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+        panneau_Info_joueur_courant.setVisible(true);
+        Info_partie.setVisible(true);
+        Carte_en_trop.setVisible(true);
+    }//GEN-LAST:event_Bouton_débuter_partieActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Pseudo_J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_Pseudo_J1ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton5ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -579,79 +371,29 @@ public class Interface_graphic extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Bouton_ajouter_J;
+    private javax.swing.JToggleButton Bouton_débuter_partie;
+    private javax.swing.JPanel Carte_en_trop;
     private javax.swing.JPanel Grille_de_jeu;
     private javax.swing.JPanel Info_partie;
     private javax.swing.JPanel Panneau_début_partie;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
-    private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton46;
-    private javax.swing.JButton jButton47;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JTextField Pseudo_J1;
+    private javax.swing.JTextField Pseudo_J2;
+    private javax.swing.JTextField Pseudo_J3;
+    private javax.swing.JTextField Pseudo_J4;
+    private javax.swing.JPanel Table_de_jeu;
     private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton10;
     private javax.swing.JToggleButton jToggleButton11;
     private javax.swing.JToggleButton jToggleButton12;
     private javax.swing.JToggleButton jToggleButton13;
     private javax.swing.JToggleButton jToggleButton14;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
