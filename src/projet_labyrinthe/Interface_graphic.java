@@ -23,7 +23,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         
         for (int i=0;i<7;i++){
             for (int j=0;j<7;j++){
-                Case_graphique Kazeu = new Case_graphique(grilleDeJeu.plateau[i][j]);
+                Case_graphique Kazeu = new Case_graphique(grilleDeJeu.plateau[i][j],"/images/tuile1.png");
                 Grille_de_jeu.add(Kazeu);
             }
         }
