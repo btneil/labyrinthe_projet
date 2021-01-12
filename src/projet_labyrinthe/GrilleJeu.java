@@ -98,18 +98,22 @@ public class GrilleJeu {
        plateau[0][0].d_droite=true;
        plateau[0][0].d_bas=true;
        plateau[0][0].image="/images/departB.png";
+       plateau[0][0].tresorCourant=27;
        
        plateau[0][6].d_gauche=true;
        plateau[0][6].d_bas=true;
        plateau[0][6].image="/images/departV.png";
+       plateau[0][6].tresorCourant=30;
        
        plateau[6][6].d_gauche=true;
        plateau[6][6].d_haut=true;
        plateau[6][6].image="/images/departR.png";
+       plateau[6][6].tresorCourant=28;
        
        plateau[6][0].d_haut=true;
        plateau[6][0].d_droite=true;
        plateau[6][0].image="/images/departJ.png";
+       plateau[6][0].tresorCourant=29;
        
        //initialisation carte qui bougent pas
        
@@ -266,13 +270,15 @@ public class GrilleJeu {
                         plateau[i][j].image="/images/tuile1.png";
                         plateau[i][j].d_haut=true;
                         plateau[i][j].d_bas=true;
+                        plateau[i][j].tresorCourant=25;
                         
                         compteur_I--;
                     }
                     if(choix==1 && compteur_L>0){
                         plateau[i][j].image="/images/tuile2.png";
                         plateau[i][j].d_droite=true;
-                        plateau[i][j].d_bas=true;                        
+                        plateau[i][j].d_bas=true;  
+                        plateau[i][j].tresorCourant=26;
                         compteur_L--;
                     }
             }

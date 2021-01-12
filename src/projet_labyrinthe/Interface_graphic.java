@@ -14,11 +14,27 @@ public class Interface_graphic extends javax.swing.JFrame {
     /**
      * Creates new form Interface_graphic
      */
+    Joueur joueurCourant;
+    GrilleJeu GrilleDeJeu;
+    int NombreJoueurs;
+    Joueur[] ListeJoueurs = new Joueur[4];
+    PartieDeJeu partie = new PartieDeJeu(4);
     public Interface_graphic() {
         initComponents();
+        
         CarteEnTrop.setVisible(false);    
+        partie.GrilleDeJeu.remplirGrille();
+        GrilleDeJeu = partie.GrilleDeJeu;
         
-        
+    for (int i=0;i<7;i++){ //lire le tableau
+        for (int j=0;j<7;j++){
+            Case_graphique Kazeu = new Case_graphique(GrilleDeJeu.plateau[i][j]);
+            Grille_de_jeu.add(Kazeu);
+
+        }
+    }
+    Case_graphique Carte_en_t = new Case_graphique(partie.GrilleDeJeu.cellSupp);
+    CarteEnTrop.add(Carte_en_t);
         
     }
 
@@ -154,7 +170,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         Table_de_jeu.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 24, -1));
 
         jToggleButton9.setText("jToggleButton9");
-        Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 139, 24, -1));
+        Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 24, -1));
 
         B1.setText("jToggleButton10");
         Table_de_jeu.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 233, 24, -1));
@@ -220,10 +236,9 @@ public class Interface_graphic extends javax.swing.JFrame {
 
     private void Bouton_débuter_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_débuter_partieActionPerformed
         // TODO add your handling code here:
-        Bouton_débuter_partie.setVisible(false);
         
-        PartieDeJeu partie = new PartieDeJeu(4);
-        partie.GrilleDeJeu.remplirGrille();
+        
+
         int J=0;
         if(Pseudo_J1.getText()!=""){
             Pion pion_1 = new Pion("R");
@@ -249,14 +264,8 @@ public class Interface_graphic extends javax.swing.JFrame {
                 
         CarteEnTrop.setVisible(true);
         
-        for (int i=0;i<7;i++){ //lire le tableau
-            for (int j=0;j<7;j++){
-                Case_graphique Kazeu = new Case_graphique(partie.GrilleDeJeu.plateau[i][j],partie.GrilleDeJeu.plateau[i][j].image);
-                Grille_de_jeu.add(Kazeu);
-            }
-        }
-        Case_graphique Carte_en_t = new Case_graphique(partie.GrilleDeJeu.cellSupp,"/images/tuile2.png");
-        CarteEnTrop.add(Carte_en_t);
+        
+        Grille_de_jeu.repaint();
         
     }//GEN-LAST:event_Bouton_débuter_partieActionPerformed
 
@@ -269,7 +278,13 @@ public class Interface_graphic extends javax.swing.JFrame {
     }//GEN-LAST:event_Pseudo_J3ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-
+    
+    partie.GrilleDeJeu.cellSupp=partie.GrilleDeJeu.plateau[0][0];
+    
+    Grille_de_jeu.repaint();
+    Table_de_jeu.repaint();
+    
+    System.out.print("wakwakaeheh");
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
