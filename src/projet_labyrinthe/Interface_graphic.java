@@ -10,7 +10,6 @@ package projet_labyrinthe;
  * @author maldo
  */
 public class Interface_graphic extends javax.swing.JFrame {
-    GrilleJeu grilleDeJeu = new GrilleJeu();
 
     /**
      * Creates new form Interface_graphic
@@ -20,13 +19,19 @@ public class Interface_graphic extends javax.swing.JFrame {
         panneau_Info_joueur_courant.setVisible(false);
         Info_partie.setVisible(false);
         Carte_en_trop.setVisible(false);
+        int nb_joueurs = 2;
         
-        grilleDeJeu.remplirGrille();
         
-        for (int i=0;i<7;i++){
-            for (int j=0;j<7;j++){
-                Case_graphique Kazeu = new Case_graphique(grilleDeJeu.plateau[i][j],grilleDeJeu.plateau[i][j].image);
-                Grille_de_jeu.add(Kazeu);
+        
+        PartieDeJeu partie = new PartieDeJeu(4);
+        partie.GrilleDeJeu.remplirGrille();
+        
+        while(partie.etre_gagnant()==false){
+            for (int i=0;i<7;i++){ //lire le tableau
+                for (int j=0;j<7;j++){
+                    Case_graphique Kazeu = new Case_graphique(partie.GrilleDeJeu.plateau[i][j],partie.GrilleDeJeu.plateau[i][j].image);
+                    Grille_de_jeu.add(Kazeu);
+                }
             }
         }
     }
@@ -55,7 +60,6 @@ public class Interface_graphic extends javax.swing.JFrame {
         Pseudo_J3 = new javax.swing.JTextField();
         panneau_Info_joueur_courant = new javax.swing.JPanel();
         Carte_en_trop = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         Info_partie = new javax.swing.JPanel();
         Table_de_jeu = new javax.swing.JPanel();
         Grille_de_jeu = new javax.swing.JPanel();
@@ -71,6 +75,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton14 = new javax.swing.JToggleButton();
         jToggleButton13 = new javax.swing.JToggleButton();
         jToggleButton12 = new javax.swing.JToggleButton();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -125,6 +130,11 @@ public class Interface_graphic extends javax.swing.JFrame {
         Panneau_début_partie.add(Pseudo_J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 150, -1));
 
         Pseudo_J3.setText("Pseudo");
+        Pseudo_J3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pseudo_J3ActionPerformed(evt);
+            }
+        });
         Panneau_début_partie.add(Pseudo_J3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, -1));
 
         panneau_Info_joueur_courant.setBackground(new java.awt.Color(255, 0, 0));
@@ -142,10 +152,6 @@ public class Interface_graphic extends javax.swing.JFrame {
 
         Carte_en_trop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("carte en trop");
-        Carte_en_trop.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
-
         Info_partie.setBackground(new java.awt.Color(102, 0, 204));
 
         javax.swing.GroupLayout Info_partieLayout = new javax.swing.GroupLayout(Info_partie);
@@ -161,7 +167,7 @@ public class Interface_graphic extends javax.swing.JFrame {
 
         Table_de_jeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Grille_de_jeu.setBackground(new java.awt.Color(255, 0, 153));
+        Grille_de_jeu.setBackground(new java.awt.Color(255, 102, 0));
         Grille_de_jeu.setLayout(new java.awt.GridLayout(8, 7));
         Table_de_jeu.add(Grille_de_jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 76, 896, 896));
 
@@ -213,45 +219,52 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton12.setText("jToggleButton12");
         Table_de_jeu.add(jToggleButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 978, 24, -1));
 
+        jLabel6.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("carte en trop");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 328, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(253, 253, 253))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(182, 182, 182)
+                        .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(392, 392, 392)
+                .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Bouton_ajouter_JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ajouter_JActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Bouton_ajouter_JActionPerformed
 
     private void Bouton_débuter_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_débuter_partieActionPerformed
         // TODO add your handling code here:
@@ -271,6 +284,14 @@ public class Interface_graphic extends javax.swing.JFrame {
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void Pseudo_J3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pseudo_J3ActionPerformed
+
+    private void Bouton_ajouter_JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ajouter_JActionPerformed
+
+    }//GEN-LAST:event_Bouton_ajouter_JActionPerformed
 
     /**
      * @param args the command line arguments

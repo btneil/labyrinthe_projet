@@ -22,6 +22,8 @@ public class PartieDeJeu {
 
     public PartieDeJeu(int nb_joueurs) {
         NombreJoueurs=nb_joueurs;
+        GrilleDeJeu = new GrilleJeu();
+        joueurCourant = ListeJoueurs[0];
     }
 
 
@@ -34,6 +36,15 @@ public class PartieDeJeu {
 
     public void distribuerCarte(Pioche unePioche) {
         joueurCourant.obj_courant = unePioche.renvoyerCarte();
+    }
+    
+    public boolean etre_gagnant(){
+        if(joueurCourant.nombreTresors>=24/NombreJoueurs){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public void initialiserPartie() {
