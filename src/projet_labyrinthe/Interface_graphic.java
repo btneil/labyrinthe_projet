@@ -18,22 +18,10 @@ public class Interface_graphic extends javax.swing.JFrame {
         initComponents();
         panneau_Info_joueur_courant.setVisible(false);
         Info_partie.setVisible(false);
-        Carte_en_trop.setVisible(false);
-        int nb_joueurs = 2;
+        Carte_en_trop.setVisible(false);    
         
         
         
-        PartieDeJeu partie = new PartieDeJeu(4);
-        partie.GrilleDeJeu.remplirGrille();
-        
-        while(partie.etre_gagnant()==false){
-            for (int i=0;i<7;i++){ //lire le tableau
-                for (int j=0;j<7;j++){
-                    Case_graphique Kazeu = new Case_graphique(partie.GrilleDeJeu.plateau[i][j],partie.GrilleDeJeu.plateau[i][j].image);
-                    Grille_de_jeu.add(Kazeu);
-                }
-            }
-        }
     }
 
     /**
@@ -50,7 +38,6 @@ public class Interface_graphic extends javax.swing.JFrame {
         Panneau_début_partie = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Bouton_ajouter_J = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Bouton_débuter_partie = new javax.swing.JToggleButton();
@@ -70,7 +57,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton7 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
         jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
+        B1 = new javax.swing.JToggleButton();
         jToggleButton11 = new javax.swing.JToggleButton();
         jToggleButton14 = new javax.swing.JToggleButton();
         jToggleButton13 = new javax.swing.JToggleButton();
@@ -91,14 +78,6 @@ public class Interface_graphic extends javax.swing.JFrame {
 
         jLabel2.setText("Nom Joueur 2:");
         Panneau_début_partie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
-
-        Bouton_ajouter_J.setText("Ajouter un joueur");
-        Bouton_ajouter_J.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bouton_ajouter_JActionPerformed(evt);
-            }
-        });
-        Panneau_début_partie.add(Bouton_ajouter_J, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, -1));
 
         jLabel4.setText("Nom Joueur 3:");
         Panneau_début_partie.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
@@ -204,8 +183,8 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton9.setText("jToggleButton9");
         Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 139, 24, -1));
 
-        jToggleButton10.setText("jToggleButton10");
-        Table_de_jeu.add(jToggleButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 233, 24, -1));
+        B1.setText("jToggleButton10");
+        Table_de_jeu.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 233, 24, -1));
 
         jToggleButton11.setText("jToggleButton11");
         Table_de_jeu.add(jToggleButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 918, 24, -1));
@@ -268,9 +247,43 @@ public class Interface_graphic extends javax.swing.JFrame {
 
     private void Bouton_débuter_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_débuter_partieActionPerformed
         // TODO add your handling code here:
+        
+        
+        PartieDeJeu partie = new PartieDeJeu(4);
+        partie.GrilleDeJeu.remplirGrille();
+        int J=0;
+        if(Pseudo_J1.getText()!=""){
+            Pion pion_1 = new Pion("R");
+            partie.ListeJoueurs[J]= new Joueur(Pseudo_J1.getText(),pion_1);
+            J++;
+        }
+        if(Pseudo_J2.getText()!=""){
+            Pion pion_2 = new Pion("V");
+            partie.ListeJoueurs[J]= new Joueur(Pseudo_J1.getText(),pion_2);
+            J++;
+        }
+        if(Pseudo_J3.getText()!=""){
+            Pion pion_3 = new Pion("J");
+            partie.ListeJoueurs[J]= new Joueur(Pseudo_J1.getText(),pion_3);
+            J++;
+        }
+        if(Pseudo_J4.getText()!=""){
+            Pion pion_4 = new Pion("B");
+            partie.ListeJoueurs[J]= new Joueur(Pseudo_J1.getText(),pion_4);
+            J++;
+        }
+        partie.joueurCourant=partie.ListeJoueurs[0];
+                
         panneau_Info_joueur_courant.setVisible(true);
         Info_partie.setVisible(true);
         Carte_en_trop.setVisible(true);
+        
+            for (int i=0;i<7;i++){ //lire le tableau
+                for (int j=0;j<7;j++){
+                    Case_graphique Kazeu = new Case_graphique(partie.GrilleDeJeu.plateau[i][j],partie.GrilleDeJeu.plateau[i][j].image);
+                    Grille_de_jeu.add(Kazeu);
+                }
+            }
     }//GEN-LAST:event_Bouton_débuter_partieActionPerformed
 
     private void Pseudo_J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J1ActionPerformed
@@ -288,11 +301,7 @@ public class Interface_graphic extends javax.swing.JFrame {
     private void Pseudo_J3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Pseudo_J3ActionPerformed
-
-    private void Bouton_ajouter_JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ajouter_JActionPerformed
-
-    }//GEN-LAST:event_Bouton_ajouter_JActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -319,7 +328,7 @@ public class Interface_graphic extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Interface_graphic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -329,7 +338,7 @@ public class Interface_graphic extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton Bouton_ajouter_J;
+    private javax.swing.JToggleButton B1;
     private javax.swing.JToggleButton Bouton_débuter_partie;
     private javax.swing.JPanel Carte_en_trop;
     private javax.swing.JPanel Grille_de_jeu;
@@ -347,7 +356,6 @@ public class Interface_graphic extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JToggleButton jToggleButton10;
     private javax.swing.JToggleButton jToggleButton11;
     private javax.swing.JToggleButton jToggleButton12;
     private javax.swing.JToggleButton jToggleButton13;

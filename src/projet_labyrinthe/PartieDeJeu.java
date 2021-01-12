@@ -18,12 +18,11 @@ public class PartieDeJeu {
     Joueur joueurCourant;
     GrilleJeu GrilleDeJeu;
     int NombreJoueurs;
-    Joueur[] ListeJoueurs = new Joueur[NombreJoueurs];
+    Joueur[] ListeJoueurs = new Joueur[4];
 
     public PartieDeJeu(int nb_joueurs) {
         NombreJoueurs=nb_joueurs;
         GrilleDeJeu = new GrilleJeu();
-        joueurCourant = ListeJoueurs[0];
     }
 
 
@@ -48,11 +47,11 @@ public class PartieDeJeu {
     }
 
     public void initialiserPartie() {
+        GrilleDeJeu.remplirGrille();
         
-
     }
 
     public void debuterPartie() {
-
+        
     }
 }

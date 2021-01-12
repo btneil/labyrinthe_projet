@@ -19,6 +19,7 @@ public class Joueur {
     public Joueur(String Nom, Pion pion_attribue){
         nom=Nom;
         pion=pion_attribue;
+        nombreTresors=0;
         
 }
     
