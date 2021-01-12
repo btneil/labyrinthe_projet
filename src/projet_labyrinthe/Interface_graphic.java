@@ -16,9 +16,7 @@ public class Interface_graphic extends javax.swing.JFrame {
      */
     public Interface_graphic() {
         initComponents();
-        panneau_Info_joueur_courant.setVisible(false);
-        Info_partie.setVisible(false);
-        Carte_en_trop.setVisible(false);    
+        CarteEnTrop.setVisible(false);    
         
         
         
@@ -45,9 +43,6 @@ public class Interface_graphic extends javax.swing.JFrame {
         Pseudo_J1 = new javax.swing.JTextField();
         Pseudo_J2 = new javax.swing.JTextField();
         Pseudo_J3 = new javax.swing.JTextField();
-        panneau_Info_joueur_courant = new javax.swing.JPanel();
-        Carte_en_trop = new javax.swing.JPanel();
-        Info_partie = new javax.swing.JPanel();
         Table_de_jeu = new javax.swing.JPanel();
         Grille_de_jeu = new javax.swing.JPanel();
         jButton50 = new javax.swing.JButton();
@@ -62,7 +57,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton14 = new javax.swing.JToggleButton();
         jToggleButton13 = new javax.swing.JToggleButton();
         jToggleButton12 = new javax.swing.JToggleButton();
-        jLabel6 = new javax.swing.JLabel();
+        CarteEnTrop = new javax.swing.JPanel();
 
         jLabel3.setText("jLabel3");
 
@@ -116,34 +111,6 @@ public class Interface_graphic extends javax.swing.JFrame {
         });
         Panneau_début_partie.add(Pseudo_J3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, -1));
 
-        panneau_Info_joueur_courant.setBackground(new java.awt.Color(255, 0, 0));
-
-        javax.swing.GroupLayout panneau_Info_joueur_courantLayout = new javax.swing.GroupLayout(panneau_Info_joueur_courant);
-        panneau_Info_joueur_courant.setLayout(panneau_Info_joueur_courantLayout);
-        panneau_Info_joueur_courantLayout.setHorizontalGroup(
-            panneau_Info_joueur_courantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 331, Short.MAX_VALUE)
-        );
-        panneau_Info_joueur_courantLayout.setVerticalGroup(
-            panneau_Info_joueur_courantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 213, Short.MAX_VALUE)
-        );
-
-        Carte_en_trop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Info_partie.setBackground(new java.awt.Color(102, 0, 204));
-
-        javax.swing.GroupLayout Info_partieLayout = new javax.swing.GroupLayout(Info_partie);
-        Info_partie.setLayout(Info_partieLayout);
-        Info_partieLayout.setHorizontalGroup(
-            Info_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 233, Short.MAX_VALUE)
-        );
-        Info_partieLayout.setVerticalGroup(
-            Info_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         Table_de_jeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Grille_de_jeu.setBackground(new java.awt.Color(255, 102, 0));
@@ -172,13 +139,18 @@ public class Interface_graphic extends javax.swing.JFrame {
         Table_de_jeu.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 24, 24, -1));
 
         jToggleButton6.setText("jToggleButton6");
-        Table_de_jeu.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 141, 24, -1));
+        Table_de_jeu.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 24, -1));
 
         jToggleButton7.setText("jToggleButton7");
+        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton7ActionPerformed(evt);
+            }
+        });
         Table_de_jeu.add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 234, 24, -1));
 
         jToggleButton8.setText("jToggleButton8");
-        Table_de_jeu.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 917, 24, -1));
+        Table_de_jeu.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 24, -1));
 
         jToggleButton9.setText("jToggleButton9");
         Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 139, 24, -1));
@@ -198,8 +170,8 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton12.setText("jToggleButton12");
         Table_de_jeu.add(jToggleButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 978, 24, -1));
 
-        jLabel6.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("carte en trop");
+        CarteEnTrop.setBackground(new java.awt.Color(255, 102, 0));
+        CarteEnTrop.setLayout(new java.awt.GridLayout(1, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,21 +179,11 @@ public class Interface_graphic extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(253, 253, 253))
+                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(573, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,15 +193,9 @@ public class Interface_graphic extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(panneau_Info_joueur_courant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(182, 182, 182)
-                        .addComponent(Info_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(392, 392, 392)
-                .addComponent(Carte_en_trop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                        .addGap(27, 27, 27)
+                        .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,7 +203,7 @@ public class Interface_graphic extends javax.swing.JFrame {
 
     private void Bouton_débuter_partieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_débuter_partieActionPerformed
         // TODO add your handling code here:
-        
+        Bouton_débuter_partie.setVisible(false);
         
         PartieDeJeu partie = new PartieDeJeu(4);
         partie.GrilleDeJeu.remplirGrille();
@@ -274,21 +230,30 @@ public class Interface_graphic extends javax.swing.JFrame {
         }
         partie.joueurCourant=partie.ListeJoueurs[0];
                 
-        panneau_Info_joueur_courant.setVisible(true);
-        Info_partie.setVisible(true);
-        Carte_en_trop.setVisible(true);
+        CarteEnTrop.setVisible(true);
         
-            for (int i=0;i<7;i++){ //lire le tableau
-                for (int j=0;j<7;j++){
-                    Case_graphique Kazeu = new Case_graphique(partie.GrilleDeJeu.plateau[i][j],partie.GrilleDeJeu.plateau[i][j].image);
-                    Grille_de_jeu.add(Kazeu);
-                }
+        for (int i=0;i<7;i++){ //lire le tableau
+            for (int j=0;j<7;j++){
+                Case_graphique Kazeu = new Case_graphique(partie.GrilleDeJeu.plateau[i][j],partie.GrilleDeJeu.plateau[i][j].image);
+                Grille_de_jeu.add(Kazeu);
             }
+        }
+        Case_graphique Carte_en_t = new Case_graphique(partie.GrilleDeJeu.cellSupp,"/images/tuile2.png");
+        CarteEnTrop.add(Carte_en_t);
+        
     }//GEN-LAST:event_Bouton_débuter_partieActionPerformed
 
     private void Pseudo_J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Pseudo_J1ActionPerformed
+
+    private void Pseudo_J3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pseudo_J3ActionPerformed
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+
+    }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         // TODO add your handling code here:
@@ -297,10 +262,6 @@ public class Interface_graphic extends javax.swing.JFrame {
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton4ActionPerformed
-
-    private void Pseudo_J3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pseudo_J3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Pseudo_J3ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -340,9 +301,8 @@ public class Interface_graphic extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton B1;
     private javax.swing.JToggleButton Bouton_débuter_partie;
-    private javax.swing.JPanel Carte_en_trop;
+    private javax.swing.JPanel CarteEnTrop;
     private javax.swing.JPanel Grille_de_jeu;
-    private javax.swing.JPanel Info_partie;
     private javax.swing.JPanel Panneau_début_partie;
     private javax.swing.JTextField Pseudo_J1;
     private javax.swing.JTextField Pseudo_J2;
@@ -355,7 +315,6 @@ public class Interface_graphic extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JToggleButton jToggleButton11;
     private javax.swing.JToggleButton jToggleButton12;
     private javax.swing.JToggleButton jToggleButton13;
@@ -367,6 +326,5 @@ public class Interface_graphic extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
-    private javax.swing.JPanel panneau_Info_joueur_courant;
     // End of variables declaration//GEN-END:variables
 }
