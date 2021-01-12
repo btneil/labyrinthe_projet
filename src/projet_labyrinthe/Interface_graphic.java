@@ -58,6 +58,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         jToggleButton13 = new javax.swing.JToggleButton();
         jToggleButton12 = new javax.swing.JToggleButton();
         CarteEnTrop = new javax.swing.JPanel();
+        Infos_partie = new javax.swing.JPanel();
 
         jLabel3.setText("jLabel3");
 
@@ -173,6 +174,19 @@ public class Interface_graphic extends javax.swing.JFrame {
         CarteEnTrop.setBackground(new java.awt.Color(255, 102, 0));
         CarteEnTrop.setLayout(new java.awt.GridLayout(1, 1));
 
+        Infos_partie.setBackground(new java.awt.Color(102, 255, 102));
+
+        javax.swing.GroupLayout Infos_partieLayout = new javax.swing.GroupLayout(Infos_partie);
+        Infos_partie.setLayout(Infos_partieLayout);
+        Infos_partieLayout.setHorizontalGroup(
+            Infos_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        Infos_partieLayout.setVerticalGroup(
+            Infos_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 161, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,10 +194,11 @@ public class Interface_graphic extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(573, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Infos_partie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +209,9 @@ public class Interface_graphic extends javax.swing.JFrame {
                         .addGap(76, 76, 76)
                         .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Infos_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(403, Short.MAX_VALUE))
         );
 
@@ -303,6 +320,7 @@ public class Interface_graphic extends javax.swing.JFrame {
     private javax.swing.JToggleButton Bouton_débuter_partie;
     private javax.swing.JPanel CarteEnTrop;
     private javax.swing.JPanel Grille_de_jeu;
+    private javax.swing.JPanel Infos_partie;
     private javax.swing.JPanel Panneau_début_partie;
     private javax.swing.JTextField Pseudo_J1;
     private javax.swing.JTextField Pseudo_J2;
