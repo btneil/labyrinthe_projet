@@ -286,9 +286,9 @@ public class Interface_graphic extends javax.swing.JFrame {
     }//GEN-LAST:event_Pseudo_J3ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-    
-    
-    GrilleDeJeu.plateau[0][0].tresorCourant=GrilleDeJeu.plateau[0][1].tresorCourant;
+    Cellule CellTransfert=GrilleDeJeu.plateau[1][6];
+    GrilleDeJeu.placerCellule_ligneD(1);
+    Carte_en_t.carte_associe=CellTransfert;
     
     Grille_de_jeu.repaint();
     

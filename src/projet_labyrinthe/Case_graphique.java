@@ -178,9 +178,7 @@ public class Case_graphique extends JButton{
             if(carte_associe.tresorCourant==30){
                 setIcon(img_departV);
             }
-            if(carte_associe.tresorCourant==0){
-                setIcon(img_departV);
-            }
+            
             
             
         }

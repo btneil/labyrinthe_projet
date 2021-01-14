@@ -51,7 +51,7 @@ public class GrilleJeu {
         }
         plateau[l][0]=cellSupp;
         return true;*/
-        
+    
         Cellule cellJeu = new Cellule();
         cellJeu.tresorCourant=plateau[1][0].tresorCourant;
         for (int i=0;i<6;i++){
@@ -274,8 +274,8 @@ public class GrilleJeu {
                 }
             }
         }
-        int compteur_I = 13;
-        int compteur_L=8; //penser à creer carte supp en L
+        int compteur_I = 14;
+        int compteur_L=9; //penser à creer carte supp en L
         for (i=0;i<7;i++){
             for (int j=0;j<7;j++){
                 if(plateau[i][j].tresorCourant==0){
@@ -294,6 +294,22 @@ public class GrilleJeu {
                         plateau[i][j].d_bas=true;  
                         plateau[i][j].tresorCourant=26;
                         compteur_L--;
+                    }
+                    if (choix==0 && compteur_I==0){
+                        plateau[i][j].image="/images/tuile1.png";
+                        plateau[i][j].d_droite=true;
+                        plateau[i][j].d_bas=true;  
+                        plateau[i][j].tresorCourant=26;
+                        compteur_L--;
+                        
+                    }
+                    if(choix==1 && compteur_L==0){
+                        plateau[i][j].image="/images/tuile2.png";
+                        plateau[i][j].d_haut=true;
+                        plateau[i][j].d_bas=true;  
+                        plateau[i][j].tresorCourant=25;
+                        compteur_I--;
+                        
                     }
                 }
             }
