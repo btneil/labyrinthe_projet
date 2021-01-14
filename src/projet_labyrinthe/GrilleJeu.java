@@ -44,16 +44,9 @@ public class GrilleJeu {
     }
     
     public boolean placerCellule_ligneD(int l){
-        /*Cellule cellJeu = plateau[l][6];
-        plateau[l][6]=null;
-        for (int i=6;i>=1;i--){
-            plateau[l][i]=plateau[l][i-1];
-        }
-        plateau[l][0]=cellSupp;
-        return true;*/
     
         Cellule cellJeu = new Cellule();
-        cellJeu.tresorCourant=plateau[1][0].tresorCourant;
+        cellJeu.tresorCourant=plateau[l][0].tresorCourant;
         for (int i=0;i<6;i++){
             plateau[l][i].tresorCourant=plateau[l][i+1].tresorCourant;
         }
@@ -62,32 +55,36 @@ public class GrilleJeu {
         return true;
     }
     public boolean placerCellule_ligneG(int l){
-        Cellule cellJeu = plateau[l][0];
-        plateau[l][0]=null;
-        for (int i=1;i<=6;i++){
-            plateau[l][i]=plateau[l][i+1];
+        
+        Cellule cellJeu = new Cellule();
+        cellJeu.tresorCourant=plateau[l][6].tresorCourant;
+        for (int i=6;i>0;i--){
+            plateau[l][i].tresorCourant=plateau[l][i-1].tresorCourant;
         }
-        plateau[l][6]=cellSupp;
+        plateau[l][0].tresorCourant=cellSupp.tresorCourant;
+        cellSupp.tresorCourant=cellJeu.tresorCourant;
         return true;
         
     }
     public boolean placerCellule_colonneH(int c){
-        Cellule cellJeu = plateau[6][c];
-        plateau[6][c]=null;
-        for (int j=6;j>=1;j--){
-            plateau[j][c]=plateau[j-1][c];
+        Cellule cellJeu = new Cellule();
+        cellJeu.tresorCourant = plateau[6][c].tresorCourant;
+        for (int j=6;j>0;j--){
+            plateau[j][c].tresorCourant=plateau[j-1][c].tresorCourant;
         }
-        plateau[0][c]=cellSupp;
+        plateau[0][c].tresorCourant=cellSupp.tresorCourant;
+        cellSupp.tresorCourant=cellJeu.tresorCourant;
         return true;
         
     }
     public boolean placerCellule_colonneB(int c){
-        Cellule cellJeu = plateau[0][c];
-        plateau[0][c]=null;
-        for (int j=1;j<=6;j--){
-            plateau[j][c]=plateau[j+1][c];
+        Cellule cellJeu = new Cellule();
+        cellJeu.tresorCourant = plateau[0][c].tresorCourant;
+        for (int j=0;j<6;j++){
+            plateau[j][c].tresorCourant=plateau[j+1][c].tresorCourant;
         }
-        plateau[6][c]=cellSupp;
+        plateau[6][c].tresorCourant=cellSupp.tresorCourant;
+        cellSupp.tresorCourant=cellJeu.tresorCourant;
         return true;
         
     }
