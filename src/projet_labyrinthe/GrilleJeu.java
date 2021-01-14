@@ -15,7 +15,12 @@ public class GrilleJeu {
 
 
     public GrilleJeu(){
-        cellSupp=null;
+        Cellule cellSupp = new Cellule();
+        cellSupp.tresorCourant=0;
+        cellSupp.d_droite=true;
+        cellSupp.d_bas=true;
+        cellSupp.tresorCourant=26;
+        
     }
     public boolean deplacerPion(int i,int j, int m, int n){
         if (deplacement_h(i,j,m,n)==true && i==m+1){
@@ -264,7 +269,7 @@ public class GrilleJeu {
         int compteur_L=8; //penser à creer carte supp en L
         for (i=0;i<7;i++){
             for (int j=0;j<7;j++){
-                if(plateau[i][j].tresorCourant==0 && ((i!=0 && j!=0) && (i!=0 && j!=6) && (i!=6 && j!=0) && (i!=6 && j!=6))){
+                if(plateau[i][j].tresorCourant==0){
                     int choix=(int) (Math.random()*2 - 0.00001);
                     if (choix==0 && compteur_I>0){
                         plateau[i][j].image="/images/tuile1.png";
@@ -281,9 +286,9 @@ public class GrilleJeu {
                         plateau[i][j].tresorCourant=26;
                         compteur_L--;
                     }
+                }
             }
         }
-            }
 
         
     }

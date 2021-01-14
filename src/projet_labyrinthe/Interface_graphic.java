@@ -19,6 +19,7 @@ public class Interface_graphic extends javax.swing.JFrame {
     int NombreJoueurs;
     Joueur[] ListeJoueurs = new Joueur[4];
     PartieDeJeu partie = new PartieDeJeu(4);
+    Case_graphique Carte_en_t = new Case_graphique(new Cellule());
     public Interface_graphic() {
         initComponents();
         
@@ -26,16 +27,17 @@ public class Interface_graphic extends javax.swing.JFrame {
         partie.GrilleDeJeu.remplirGrille();
         GrilleDeJeu = partie.GrilleDeJeu;
         
-    for (int i=0;i<7;i++){ //lire le tableau
-        for (int j=0;j<7;j++){
-            Case_graphique Kazeu = new Case_graphique(GrilleDeJeu.plateau[i][j]);
-            Grille_de_jeu.add(Kazeu);
+        for (int i=0;i<7;i++){ //lire le tableau
+            for (int j=0;j<7;j++){
+                Case_graphique Kazeu = new Case_graphique(GrilleDeJeu.plateau[i][j]);
+                Grille_de_jeu.add(Kazeu);
 
+            }
         }
-    }
-    Case_graphique Carte_en_t = new Case_graphique(partie.GrilleDeJeu.cellSupp);
-    CarteEnTrop.add(Carte_en_t);
-        
+        Carte_en_t.carte_associe.tresorCourant=26;
+        CarteEnTrop.add(Carte_en_t);
+        Grille_de_jeu.repaint();
+
     }
 
     /**
@@ -279,16 +281,17 @@ public class Interface_graphic extends javax.swing.JFrame {
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
     
-    partie.GrilleDeJeu.cellSupp=partie.GrilleDeJeu.plateau[0][0];
+    
+    GrilleDeJeu.plateau[0][0].tresorCourant=GrilleDeJeu.plateau[0][1].tresorCourant;
     
     Grille_de_jeu.repaint();
-    Table_de_jeu.repaint();
     
     System.out.print("wakwakaeheh");
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // TODO add your handling code here:
+        Carte_en_t.carte_associe.tresorCourant=Carte_en_t.carte_associe.tresorCourant+1;
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed

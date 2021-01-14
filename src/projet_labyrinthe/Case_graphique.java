@@ -54,7 +54,9 @@ public class Case_graphique extends JButton{
     public void paintComponent (Graphics G){
         super.paintComponent(G);
         if(carte_associe!=null){
-            switch (carte_associe.tresorCourant){
+            System.out.println(carte_associe.tresorCourant);
+            /**switch (carte_associe.tresorCourant){
+                
                 case 1:setIcon(img_heaume);
                 case 2:setIcon(img_chandelier);
                 case 3:setIcon(img_epee);
@@ -85,7 +87,102 @@ public class Case_graphique extends JButton{
                 case 28:setIcon(img_departR);
                 case 29:setIcon(img_departJ);
                 case 30:setIcon(img_departV);
+            }**/
+            if(carte_associe.tresorCourant==1){
+                setIcon(img_heaume);
             }
+            if(carte_associe.tresorCourant==2){
+                setIcon(img_chandelier);
+            }
+            if(carte_associe.tresorCourant==3){
+                setIcon(img_epee);
+            }
+            if(carte_associe.tresorCourant==4){
+                setIcon(img_saphir);
+            }
+            if(carte_associe.tresorCourant==5){
+                setIcon(img_tresor);
+            }
+            if(carte_associe.tresorCourant==6){
+                setIcon(img_bague);
+            }
+            if(carte_associe.tresorCourant==7){
+                setIcon(img_crane);
+            }
+            if(carte_associe.tresorCourant==8){
+                setIcon(img_cle);
+            }
+            if(carte_associe.tresorCourant==9){
+                setIcon(img_couronne);
+            }
+            if(carte_associe.tresorCourant==10){
+                setIcon(img_carteTresor);
+            }
+            if(carte_associe.tresorCourant==11){
+                setIcon(img_bourse);
+            }
+            if(carte_associe.tresorCourant==12){
+                setIcon(img_livre);
+            }
+            if(carte_associe.tresorCourant==13){
+                setIcon(img_araignee);
+            }
+            if(carte_associe.tresorCourant==14){
+                setIcon(img_scarabee);
+            }
+            if(carte_associe.tresorCourant==15){
+                setIcon(img_chauvesouris);
+            }
+            if(carte_associe.tresorCourant==16){
+                setIcon(img_rat);
+            }
+            if(carte_associe.tresorCourant==17){
+                setIcon(img_chouette);
+            }
+            if(carte_associe.tresorCourant==18){
+                setIcon(img_dragon);
+            }
+            if(carte_associe.tresorCourant==19){
+                setIcon(img_fantome);
+            }
+            if(carte_associe.tresorCourant==20){
+                setIcon(img_fee);
+            }
+            if(carte_associe.tresorCourant==21){
+                setIcon(img_genie);
+            }
+            if(carte_associe.tresorCourant==22){
+                setIcon(img_gobelin);
+            }
+            if(carte_associe.tresorCourant==23){
+                setIcon(img_lezard);
+            }
+            if(carte_associe.tresorCourant==24){
+                setIcon(img_papillon);
+            }
+            if(carte_associe.tresorCourant==25){
+                setIcon(img_tuile1);
+            }
+            if(carte_associe.tresorCourant==26){
+                setIcon(img_tuile2);
+            }
+            if(carte_associe.tresorCourant==27){
+                setIcon(img_departB);
+            }
+            if(carte_associe.tresorCourant==28){
+                setIcon(img_departR);
+            }
+            if(carte_associe.tresorCourant==29){
+                setIcon(img_departJ);
+            }
+            if(carte_associe.tresorCourant==30){
+                setIcon(img_departV);
+            }
+            if(carte_associe.tresorCourant==0){
+                setIcon(img_departV);
+            }
+            
+            
         }
     }
 }
