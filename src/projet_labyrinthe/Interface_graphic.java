@@ -64,18 +64,18 @@ public class Interface_graphic extends javax.swing.JFrame {
         Pseudo_J3 = new javax.swing.JTextField();
         Table_de_jeu = new javax.swing.JPanel();
         Grille_de_jeu = new javax.swing.JPanel();
-        jButton50 = new javax.swing.JButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
         jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
         jToggleButton9 = new javax.swing.JToggleButton();
         B1 = new javax.swing.JToggleButton();
         jToggleButton11 = new javax.swing.JToggleButton();
         jToggleButton14 = new javax.swing.JToggleButton();
         jToggleButton13 = new javax.swing.JToggleButton();
         jToggleButton12 = new javax.swing.JToggleButton();
+        jToggleButton8 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jButton50 = new javax.swing.JButton();
         CarteEnTrop = new javax.swing.JPanel();
         Infos_partie = new javax.swing.JPanel();
 
@@ -134,21 +134,8 @@ public class Interface_graphic extends javax.swing.JFrame {
         Table_de_jeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Grille_de_jeu.setBackground(new java.awt.Color(255, 102, 0));
-        Grille_de_jeu.setLayout(new java.awt.GridLayout(8, 7));
-        Table_de_jeu.add(Grille_de_jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 76, 896, 896));
-
-        jButton50.setText("jButton50");
-        jButton50.setMaximumSize(new java.awt.Dimension(23, 23));
-        jButton50.setMinimumSize(new java.awt.Dimension(23, 23));
-        Table_de_jeu.add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 989, 24, -1));
-
-        jToggleButton4.setText("jToggleButton4");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        Table_de_jeu.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 989, 24, -1));
+        Grille_de_jeu.setLayout(new java.awt.GridLayout(7, 7));
+        Table_de_jeu.add(Grille_de_jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 610, 610));
 
         jToggleButton5.setText("jToggleButton5");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -156,9 +143,14 @@ public class Interface_graphic extends javax.swing.JFrame {
                 jToggleButton5ActionPerformed(evt);
             }
         });
-        Table_de_jeu.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 24, 24, -1));
+        Table_de_jeu.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 24, -1));
 
         jToggleButton6.setText("jToggleButton6");
+        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton6ActionPerformed(evt);
+            }
+        });
         Table_de_jeu.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 24, -1));
 
         jToggleButton7.setText("jToggleButton7");
@@ -167,13 +159,15 @@ public class Interface_graphic extends javax.swing.JFrame {
                 jToggleButton7ActionPerformed(evt);
             }
         });
-        Table_de_jeu.add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 234, 24, -1));
-
-        jToggleButton8.setText("jToggleButton8");
-        Table_de_jeu.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 24, -1));
+        Table_de_jeu.add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 24, -1));
 
         jToggleButton9.setText("jToggleButton9");
-        Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 24, -1));
+        jToggleButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton9ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 24, -1));
 
         B1.setText("jToggleButton10");
         B1.addActionListener(new java.awt.event.ActionListener() {
@@ -181,19 +175,65 @@ public class Interface_graphic extends javax.swing.JFrame {
                 B1ActionPerformed(evt);
             }
         });
-        Table_de_jeu.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 233, 24, -1));
+        Table_de_jeu.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 24, -1));
 
         jToggleButton11.setText("jToggleButton11");
-        Table_de_jeu.add(jToggleButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 918, 24, -1));
+        jToggleButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton11ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 24, -1));
 
         jToggleButton14.setText("jToggleButton14");
-        Table_de_jeu.add(jToggleButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 978, 24, -1));
+        jToggleButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton14ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, 24, -1));
 
         jToggleButton13.setText("jToggleButton13");
-        Table_de_jeu.add(jToggleButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 978, 24, -1));
+        jToggleButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton13ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 24, -1));
 
         jToggleButton12.setText("jToggleButton12");
-        Table_de_jeu.add(jToggleButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 978, 24, -1));
+        jToggleButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton12ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 24, -1));
+
+        jToggleButton8.setText("jToggleButton8");
+        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton8ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 770, 24, -1));
+
+        jToggleButton4.setText("jToggleButton4");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 770, 24, -1));
+
+        jButton50.setText("jButton50");
+        jButton50.setMaximumSize(new java.awt.Dimension(23, 23));
+        jButton50.setMinimumSize(new java.awt.Dimension(23, 23));
+        jButton50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton50ActionPerformed(evt);
+            }
+        });
+        Table_de_jeu.add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 770, 24, -1));
 
         CarteEnTrop.setBackground(new java.awt.Color(255, 102, 0));
         CarteEnTrop.setLayout(new java.awt.GridLayout(1, 1));
@@ -204,7 +244,7 @@ public class Interface_graphic extends javax.swing.JFrame {
         Infos_partie.setLayout(Infos_partieLayout);
         Infos_partieLayout.setHorizontalGroup(
             Infos_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 333, Short.MAX_VALUE)
         );
         Infos_partieLayout.setVerticalGroup(
             Infos_partieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,27 +256,30 @@ public class Interface_graphic extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(109, 109, 109)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(Panneau_début_partie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Infos_partie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Infos_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
+                        .addContainerGap()
+                        .addComponent(Table_de_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
                         .addComponent(Panneau_début_partie, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
                         .addComponent(CarteEnTrop, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Infos_partie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(664, Short.MAX_VALUE))
         );
 
         pack();
@@ -286,22 +329,23 @@ public class Interface_graphic extends javax.swing.JFrame {
     }//GEN-LAST:event_Pseudo_J3ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-    Cellule CellTransfert=GrilleDeJeu.plateau[1][6];
-    GrilleDeJeu.placerCellule_ligneD(1);
-    Carte_en_t.carte_associe=CellTransfert;
+    
+    partie.GrilleDeJeu.placerCellule_ligneG(1);
     
     Grille_de_jeu.repaint();
     
-    System.out.print("wakwakaeheh");
+    //System.out.print("wakwakaeheh");
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        Carte_en_t.carte_associe.tresorCourant=Carte_en_t.carte_associe.tresorCourant+1;
-        CarteEnTrop.repaint();
+        partie.GrilleDeJeu.placerCellule_colonneH(1);
+        Grille_de_jeu.repaint();
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_colonneB(3);
+        Grille_de_jeu.repaint();
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
@@ -309,6 +353,54 @@ public class Interface_graphic extends javax.swing.JFrame {
         partie.GrilleDeJeu.placerCellule_ligneD(1);
         Grille_de_jeu.repaint();
     }//GEN-LAST:event_B1ActionPerformed
+
+    private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_colonneH(3);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton9ActionPerformed
+
+    private void jToggleButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton13ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_colonneH(5);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton13ActionPerformed
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_ligneG(3);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton6ActionPerformed
+
+    private void jToggleButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton12ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_ligneG(5);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton12ActionPerformed
+
+    private void jToggleButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton11ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_ligneD(3);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton11ActionPerformed
+
+    private void jToggleButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton14ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_ligneD(5);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton14ActionPerformed
+
+    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_colonneB(1);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jToggleButton8ActionPerformed
+
+    private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_colonneB(5);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_jButton50ActionPerformed
     
     /**
      * @param args the command line arguments
