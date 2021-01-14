@@ -388,6 +388,7 @@ public class Interface_graphic extends javax.swing.JFrame {
     partie.GrilleDeJeu.placerCellule_ligneG(1);
     
     Grille_de_jeu.repaint();
+    CarteEnTrop.repaint();
     
     //System.out.print("wakwakaeheh");
     }//GEN-LAST:event_jToggleButton7ActionPerformed
@@ -395,66 +396,77 @@ public class Interface_graphic extends javax.swing.JFrame {
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         partie.GrilleDeJeu.placerCellule_colonneH(1);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_colonneB(3);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_ligneD(1);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_B1ActionPerformed
 
     private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_colonneH(3);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton9ActionPerformed
 
     private void jToggleButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton13ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_colonneH(5);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton13ActionPerformed
 
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_ligneG(3);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton6ActionPerformed
 
     private void jToggleButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton12ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_ligneG(5);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton12ActionPerformed
 
     private void jToggleButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton11ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_ligneD(3);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton11ActionPerformed
 
     private void jToggleButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton14ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_ligneD(5);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton14ActionPerformed
 
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_colonneB(1);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
         // TODO add your handling code here:
         partie.GrilleDeJeu.placerCellule_colonneB(5);
         Grille_de_jeu.repaint();
+        CarteEnTrop.repaint();
     }//GEN-LAST:event_jButton50ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
