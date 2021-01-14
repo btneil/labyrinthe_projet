@@ -42,13 +42,12 @@ public class GrilleJeu {
         return true;
     }
     
-    public boolean placerCellule_ligneD(int l){
+    public boolean placerCellule_ligneD(int l,Cellule CELSUP){
         Cellule cellJeu = plateau[l][6];
-        plateau[l][6]=null;
-        for (int i=6;i>=1;i--){
-            plateau[l][i]=plateau[l][i-1];
+        for (int i=6;i>0;i--){
+            plateau[l][i].tresorCourant=plateau[l][i-1].tresorCourant;
         }
-        plateau[l][0]=cellSupp;
+        plateau[l][0].tresorCourant=CELSUP.tresorCourant;
         return true;
         
     }
@@ -265,8 +264,8 @@ public class GrilleJeu {
                 }
             }
         }
-        int compteur_I = 13;
-        int compteur_L=8; //penser à creer carte supp en L
+        int compteur_I = 14;
+        int compteur_L=9; //penser à creer carte supp en L
         for (i=0;i<7;i++){
             for (int j=0;j<7;j++){
                 if(plateau[i][j].tresorCourant==0){
@@ -285,6 +284,22 @@ public class GrilleJeu {
                         plateau[i][j].d_bas=true;  
                         plateau[i][j].tresorCourant=26;
                         compteur_L--;
+                    }
+                    if (choix==0 && compteur_I==0){
+                        plateau[i][j].image="/images/tuile1.png";
+                        plateau[i][j].d_droite=true;
+                        plateau[i][j].d_bas=true;  
+                        plateau[i][j].tresorCourant=26;
+                        compteur_L--;
+                        
+                    }
+                    if(choix==1 && compteur_L==0){
+                        plateau[i][j].image="/images/tuile2.png";
+                        plateau[i][j].d_haut=true;
+                        plateau[i][j].d_bas=true;  
+                        plateau[i][j].tresorCourant=25;
+                        compteur_I--;
+                        
                     }
                 }
             }
