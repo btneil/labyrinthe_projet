@@ -471,10 +471,36 @@ public class Interface_graphic extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        for (int i=0;i<7;i++){
+            for(int j=0;j<7;j++){
+                if(partie.GrilleDeJeu.plateau[i][j].pionCourant!=null){
+                    if(partie.GrilleDeJeu.plateau[i][j].pionCourant==partie.joueurCourant.pion){
+                        if(partie.GrilleDeJeu.deplacement_g(i, j, i, j-1)==true){
+                            partie.GrilleDeJeu.deplacerPion(i,j,i,j-1);
+                        }
+                    }
+                }
+                    
+            }
+        }
+        Grille_de_jeu.repaint();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        for (int i=0;i<7;i++){
+            for(int j=0;j<7;j++){
+                if(partie.GrilleDeJeu.plateau[i][j].pionCourant!=null){
+                    if(partie.GrilleDeJeu.plateau[i][j].pionCourant==partie.joueurCourant.pion){
+                        if(partie.GrilleDeJeu.deplacement_d(i, j, i+1, j)==true){
+                            partie.GrilleDeJeu.deplacerPion(i,j,i+1,j);
+                        }
+                    }
+                }
+                    
+            }
+        }
+        Grille_de_jeu.repaint();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -483,14 +509,15 @@ public class Interface_graphic extends javax.swing.JFrame {
             for(int j=0;j<7;j++){
                 if(partie.GrilleDeJeu.plateau[i][j].pionCourant!=null){
                     if(partie.GrilleDeJeu.plateau[i][j].pionCourant==partie.joueurCourant.pion){
-                        if(partie.GrilleDeJeu.deplacement_b(i, j, i-1, j)==true){
-                            partie.GrilleDeJeu.deplacerPion(i,j,i-1,j);
+                        if(partie.GrilleDeJeu.deplacement_b(i, j, i, j+1)==true){
+                            partie.GrilleDeJeu.deplacerPion(i,j,i,j+1);
                         }
                     }
                 }
                     
             }
         }
+        Grille_de_jeu.repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -501,7 +528,7 @@ public class Interface_graphic extends javax.swing.JFrame {
             for(int j=0;j<7;j++){
                 if(partie.GrilleDeJeu.plateau[i][j].pionCourant!=null){
                     if(partie.GrilleDeJeu.plateau[i][j].pionCourant==partie.joueurCourant.pion){
-                        if(partie.GrilleDeJeu.deplacement_b(i, j, i+1, j)==true){
+                        if(partie.GrilleDeJeu.deplacement_h(i, j, i+1, j)==true){
                             partie.GrilleDeJeu.deplacerPion(i,j,i+1,j);
                         }
                     }
@@ -509,6 +536,7 @@ public class Interface_graphic extends javax.swing.JFrame {
                     
             }
         }
+        Grille_de_jeu.repaint();
     }//GEN-LAST:event_jButton3ActionPerformed
     
     /**
