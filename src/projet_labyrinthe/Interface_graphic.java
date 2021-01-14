@@ -35,9 +35,10 @@ public class Interface_graphic extends javax.swing.JFrame {
             }
         }
         Carte_en_t.carte_associe.tresorCourant=26;
+        GrilleDeJeu.cellSupp=Carte_en_t.carte_associe;
         CarteEnTrop.add(Carte_en_t);
         Grille_de_jeu.repaint();
-
+        
     }
 
     /**
@@ -175,6 +176,11 @@ public class Interface_graphic extends javax.swing.JFrame {
         Table_de_jeu.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 24, -1));
 
         B1.setText("jToggleButton10");
+        B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B1ActionPerformed(evt);
+            }
+        });
         Table_de_jeu.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 233, 24, -1));
 
         jToggleButton11.setText("jToggleButton11");
@@ -297,6 +303,12 @@ public class Interface_graphic extends javax.swing.JFrame {
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
+        // TODO add your handling code here:
+        partie.GrilleDeJeu.placerCellule_ligneD(1);
+        Grille_de_jeu.repaint();
+    }//GEN-LAST:event_B1ActionPerformed
     
     /**
      * @param args the command line arguments

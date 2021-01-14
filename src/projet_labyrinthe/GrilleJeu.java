@@ -12,11 +12,12 @@ package projet_labyrinthe;
 public class GrilleJeu {
     Cellule [][] plateau = new Cellule[7][7];
     Cellule cellSupp;
+    
 
 
     public GrilleJeu(){
         Cellule cellSupp = new Cellule();
-        cellSupp.tresorCourant=0;
+        cellSupp.tresorCourant=26;
         cellSupp.d_droite=true;
         cellSupp.d_bas=true;
         cellSupp.tresorCourant=26;
@@ -43,14 +44,22 @@ public class GrilleJeu {
     }
     
     public boolean placerCellule_ligneD(int l){
-        Cellule cellJeu = plateau[l][6];
+        /*Cellule cellJeu = plateau[l][6];
         plateau[l][6]=null;
         for (int i=6;i>=1;i--){
             plateau[l][i]=plateau[l][i-1];
         }
         plateau[l][0]=cellSupp;
-        return true;
+        return true;*/
         
+        Cellule cellJeu = new Cellule();
+        cellJeu.tresorCourant=plateau[1][0].tresorCourant;
+        for (int i=0;i<6;i++){
+            plateau[l][i].tresorCourant=plateau[l][i+1].tresorCourant;
+        }
+        plateau[l][6].tresorCourant=cellSupp.tresorCourant;
+        cellSupp.tresorCourant=cellJeu.tresorCourant;
+        return true;
     }
     public boolean placerCellule_ligneG(int l){
         Cellule cellJeu = plateau[l][0];
